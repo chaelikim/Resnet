@@ -140,7 +140,7 @@ def train_model(model, criterion, optimizer, num_epochs=3):
                                                         epoch_loss,
                                                         epoch_acc))
     return model
-    ~~~
+~~~
 * 모델을 학습합니다. 학습하는 시간이 조금 걸립니다.
 ~~~python
 model_trained = train_model(model, criterion, optimizer, num_epochs=3)
