@@ -151,7 +151,7 @@ model_trained = train_model(model, criterion, optimizer, num_epochs=3)
 torch.save(model_trained.state_dict(), './weights.h5')
 ~~~
 
-* 모델을 다시 만듭니다. 이번에는 학습을 하지 않고 저장된 모델을 로드할것이라서 프리트레인을 False로 설정합니다. 위에서 학습한 weight값을 읽어 모델을 준비합니다.
+* 모델을 다시 만듭니다. 이번에는 학습을 하지 않고 저장된 모델을 로드할것이라서 pretrained를 False로 설정합니다. 위에서 학습한 weight값을 읽어 모델을 준비합니다.
 ~~~python
 model = models.resnet50(pretrained=False).to(device)
 model.fc = nn.Sequential(
