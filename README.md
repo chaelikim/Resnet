@@ -40,7 +40,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 ~~~
 
 * resnet50 모델을 가져옵니다. pretrained는 ImageNet으로 사전 학습된 모델을 가져 올지를 결정하는 패러미터입니다. 우리는 True로 설정합니다.
-또한 미리 학습된 모델로 finetuning 하는것이므로 requires_grad = False로 설정해 주어야 학습이 안 되도록 고정시킬 수 있습니다. 불러온 모델의 마지막 fully connected layer를 수정하여 fc(fully connected) layer를 원하는 레이어로 변경한다. 출력이 5명이 되도록 분류하는 모델을 만들 것이므로 nn.Linear(128,5)를 사용합니다.
+또한 미리 학습된 모델로 finetuning 하는것이므로 requires_grad = False로 설정해 주어야 학습이 안 되도록 고정시킬 수 있습니다. 불러온 모델의 마지막 fully connected layer를 수정하여 fc(fully connected) layer를 원하는 레이어로 변경합니다. 출력이 5명이 되도록 분류하는 모델을 만들 것이므로 nn.Linear(128,5)를 사용합니다.
 ~~~python
 model = models.resnet50(pretrained=False).to(device)
 model.fc = nn.Sequential(
