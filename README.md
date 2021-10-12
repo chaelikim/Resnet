@@ -102,7 +102,7 @@ optimizer = optim.Adam(model.fc.parameters())
 ~~~
 
 * 이미지를 학습하는 함수를 작성합니다. 일반적인 파이토치 학습 코드와 동일합니다.
-~~~
+~~~python
 def train_model(model, criterion, optimizer, num_epochs=3):
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch+1, num_epochs))
